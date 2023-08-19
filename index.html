@@ -9,16 +9,19 @@
   </head>
   <body>
     <header>
-      <div>
+      <div class="name_header">
          <a href="#"><h1>AAMIR.</h1></a>
       </div>
-      <nav>
-        <a class="header_links active" data-nav="#overview" href="#">Overview</a>
-        <a class="header_links nav_project"  data-nav="#projects" href="">Projects</a>
-        <a class="header_links" data-nav="#skills" href="#skills">Skills</a>
-        
-        <button>Connect</button>
-      </nav>
+      <div class="links_header ">
+        <nav class="hidden burgerMenu" >
+          <a class="header_links active  " data-nav="#overview" href="#">Overview</a>
+          <a class="header_links nav_project "  data-nav="#projects" href="">Projects</a>
+          <a class="header_links " data-nav="#skills" href="#skills">Skills</a>
+        </nav>
+        <button class="burger-btn"></button>
+        <button class="connect-btn">Connect</button>
+      </div>
+      
     </header>
     <main>
       <!-- overview section -->

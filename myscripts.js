@@ -5,6 +5,16 @@ const navLinks = document.querySelectorAll(".header_links");
 const hiddenElements = document.querySelectorAll(".hidden");
 const projectBtn = document.querySelector(".nav_project");
 const project = document.querySelector("#projects");
+const burger = document.querySelector('.burger-btn')
+const burgerMenu = document.querySelectorAll('.burgerMenu')
+
+
+burger.addEventListener('click',()=> {
+  burgerMenu.forEach((item) => {
+    item.classList.toggle('hidden')
+  })
+  
+})
 
 //fix for scrolling to project section
 projectBtn.addEventListener("click", (e) => {

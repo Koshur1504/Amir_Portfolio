@@ -45,6 +45,7 @@
   /* media query 600px */
   --inline-margin2: 2vw;
   --icon-size: 44px;
+  --burger-background: rgba(240, 248, 255, 0.99);
 }
 html {
   height: auto;
@@ -75,38 +76,43 @@ header {
   background-color: antiquewhite;
   align-items: center;
   padding: 20px 220px;
-  backdrop-filter: blur(2rem);
+  backdrop-filter: blur(3rem);
   background-color: var(--header-background);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.2rem 0.1rem;
   position: fixed;
   height: 75px;
-  top: 0px;
+  inset: 0;
   width: 100%;
   z-index: 100;
   user-select: none;
-  & header div {
-    background-color: var(--header-background);
-
-    & header div h1 {
+  & .name_header {
+    & h1 {
       font-size: 1.7rem;
       font-weight: 1000 !important;
     }
   }
+  & .links_header {
+    display: flex;
+    & nav {
+      display: flex;
+      align-items: center;
+      & a {
+        padding-right: 30px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  & .connect-btn {
+    border: 2px solid rgba(0, 128, 128, 0.452);
+    border-radius: 100px;
+    padding: 5px 14px;
+    background: transparent;
+  }
+  & .burger-btn {
+    display: none;
+  }
 }
 
-header nav {
-  display: flex;
-  align-items: center;
-}
-header nav a {
-  padding-right: 30px;
-  font-size: 0.9rem;
-}
-header nav button {
-  border: 2px solid rgba(0, 128, 128, 0.452);
-  border-radius: 100px;
-  padding: 5px 14px;
-}
 main {
   background-color: var(--main-background-color);
 }
@@ -526,11 +532,10 @@ footer {
   #overview {
     margin-inline: var(--inline-margin1);
     margin-top: 90px;
-    
-    
+
     & .hero {
       /* background-color: red; */
-      
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -538,8 +543,7 @@ footer {
       margin-top: 0;
       flex: 2;
       flex-shrink: 1;
-      
-      
+
       & .button_tech {
         padding-right: 0;
       }
@@ -556,7 +560,7 @@ footer {
 
       flex: 1;
       flex-shrink: 1;
-      
+
       & .img {
         width: 250px;
         height: 50vh;
@@ -582,11 +586,60 @@ footer {
   }
 }
 
-
-
 @media only screen and (max-width: 600px) {
   header {
     padding-inline: var(--inline-margin2);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    & .links_header {
+      flex-direction: row-reverse;
+      position: relative;
+      margin-right: var(--inline-margin2);
+      & nav {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        align-items: start;
+        gap: 1rem;
+        padding: 20px var(--inline-margin2);
+        background-color: var(--burger-background);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 0.2rem;
+        border-radius: 0 0 15px 15px;
+        backdrop-filter: blur(3rem);
+        & a {
+          scale: 1.1;
+          margin-left: var(--inline-margin2);
+          &:hover {
+            scale: 1.1;
+          }
+        }
+      }
+      .burgerMenu{
+        transition: all 500ms;
+      }
+      .hidden{
+        padding: 0;
+        transform: translateX(50%);
+         & a{
+          display: none;
+         }
+        }
+      }
+      & .burger-btn {
+        display: block;
+        background-image: url("./assets/burger-menu-svgrepo-com.svg");
+        width: 32px;
+        border: none;
+        background-size:cover;
+        background-position: center;
+        background-color: var(--header-background); 
+        margin-inline: var(--inline-margin2);
+      }
+    }
   }
   #overview {
     margin-inline: var(--inline-margin2);
@@ -660,7 +713,7 @@ footer {
       }
     }
   }
-}
+
 
 @media only screen and (max-width: 330px) {
 }
