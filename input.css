@@ -40,7 +40,7 @@
   --p1-weight: 1rem;
 
   /* media query 1300 */
-  --inline-margin1: 10vw;
+  --inline-margin1: 10%;
 
   /* media query 600px */
   --inline-margin2: 2vw;
@@ -61,7 +61,8 @@ html {
 }
 main {
   height: auto;
-  min-width: 380px !important;
+  min-width: 350px !important;
+  overflow-x: hidden;
 }
 a:link,
 a:hover,
@@ -591,10 +592,13 @@ footer {
   header {
     padding-inline: var(--inline-margin2);
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
     & .links_header {
       flex-direction: row-reverse;
       position: relative;
       margin-right: var(--inline-margin2);
+      margin-left: auto;
+
       & nav {
         position: fixed;
         top: 75px;
@@ -614,23 +618,33 @@ footer {
         & a {
           scale: 1.1;
           margin-left: var(--inline-margin2);
+          opacity: 1;
           &:hover {
             scale: 1.1;
           }
         }
       }
       .burgerMenu {
-        transition: all 500ms;
+        transition: all 200ms;
+        & a {
+          transition: all ease-in 300ms;
+          font-size: 1rem;
+        }
       }
       .hidden {
         padding: 0;
-        transform: translateX(50%);
+        
+        transform: scaleY(0);
+        backdrop-filter: blur(3rem);
+        top: 30%;
+        right: 100%;
         & a {
-          display: none;
+          transform: scale(0);
+          
         }
       }
     }
-    & .burger-btn {
+    & .burger-btn[data-visible="false"] {
       display: block;
       background-image: url("./assets/burger-menu-svgrepo-com.svg");
       width: 32px;
@@ -638,7 +652,19 @@ footer {
       background-size: cover;
       background-position: center;
       background-color: var(--header-background);
-      margin-inline: var(--inline-margin2);
+      margin-left: var(--inline-margin2);
+      overflow: hidden;
+    }
+    & .burger-btn[data-visible="true"] {
+      display: block;
+      background-image: url("./assets/list-cross-minimalistic-svgrepo-com.svg");
+      width: 32px;
+      border: none;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--header-background);
+      margin-left: var(--inline-margin2);
+      overflow: hidden;
     }
   }
 
@@ -722,7 +748,7 @@ footer {
   opacity: 0.5;
   filter: blur(1px) !important;
   transform: scale(1.1);
-  transition: all 2000ms;
+  transition: all 1000ms;
 }
 .show {
   opacity: 1;

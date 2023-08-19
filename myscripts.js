@@ -5,16 +5,29 @@ const navLinks = document.querySelectorAll(".header_links");
 const hiddenElements = document.querySelectorAll(".hidden");
 const projectBtn = document.querySelector(".nav_project");
 const project = document.querySelector("#projects");
-const burger = document.querySelector('.burger-btn')
-const burgerMenu = document.querySelectorAll('.burgerMenu')
+const burger = document.querySelector(".burger-btn");
+const burgerMenu = document.querySelector(".burgerMenu");
 
+//burger menu functionality
+//closing burger menu
+const closeBurger = () => {
+  const visibility = burgerMenu.getAttribute("data-visible");
 
-burger.addEventListener('click',()=> {
-  burgerMenu.forEach((item) => {
-    item.classList.toggle('hidden')
-  })
-  
-})
+  if (visibility === "false") {
+    burgerMenu.setAttribute("data-visible", true);
+    burger.setAttribute("data-visible", true);
+  } else {
+    burgerMenu.setAttribute("data-visible", false);
+    burger.setAttribute("data-visible",false);
+  }
+  burgerMenu.classList.toggle("hidden");
+};
+//event listner on burger button
+burger.addEventListener("click", closeBurger);
+// Event listener on button menu items
+navLinks.forEach((item) => {
+  item.addEventListener("click", closeBurger);
+});
 
 //fix for scrolling to project section
 projectBtn.addEventListener("click", (e) => {
