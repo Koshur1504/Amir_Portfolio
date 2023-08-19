@@ -15,7 +15,7 @@
   /* --text_color_green: rgb(36, 102, 36); */
   --text_color_green: rgb(0, 0, 0);
 
-  --background_library: rgb(255, 255, 255);
+  --background_library: rgba(224, 224, 224, 0.253);
 
   --header-background: rgba(240, 248, 255, 0.58);
 
@@ -44,7 +44,7 @@
 
   /* media query 600px */
   --inline-margin2: 2vw;
-  --icon-size: 30px;
+  --icon-size: 44px;
 }
 html {
   height: auto;
@@ -60,6 +60,7 @@ html {
 }
 main {
   height: auto;
+  min-width: 380px !important;
 }
 a:link,
 a:hover,
@@ -78,6 +79,7 @@ header {
   background-color: var(--header-background);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.2rem 0.1rem;
   position: fixed;
+  height: 75px;
   top: 0px;
   width: 100%;
   z-index: 100;
@@ -158,7 +160,8 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 15rem;
+    width: 14rem;
+    height: auto;
   }
   .bottons_icons {
     display: flex;
@@ -465,6 +468,7 @@ main {
       width: fit-content;
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
 
       & .container {
@@ -492,7 +496,8 @@ main {
   }
 }
 footer {
-  padding: 20px 20px 0px 20px;
+  /* padding: 20px 20px 0px 20px; */
+  margin: var(--inline-margin2);
   background-color: var(--main-background-color);
   & div {
     padding: 20px;
@@ -520,8 +525,21 @@ footer {
   }
   #overview {
     margin-inline: var(--inline-margin1);
-    flex-direction: column;
+    margin-top: 90px;
+    
+    
     & .hero {
+      /* background-color: red; */
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      margin-top: 0;
+      flex: 2;
+      flex-shrink: 1;
+      
+      
       & .button_tech {
         padding-right: 0;
       }
@@ -529,9 +547,16 @@ footer {
     & .hero_img {
       align-items: center;
       justify-content: center;
-      margin-inline: var(--inline-margin1);
+      margin-top: -20px;
+      margin-inline: var(--inline-margin2);
       width: 100%;
+      min-width: 230px;
+      margin-block: 0;
+      padding: 0;
 
+      flex: 1;
+      flex-shrink: 1;
+      
       & .img {
         width: 250px;
         height: 50vh;
@@ -556,20 +581,27 @@ footer {
     }
   }
 }
+
+
+
 @media only screen and (max-width: 600px) {
   header {
     padding-inline: var(--inline-margin2);
   }
   #overview {
     margin-inline: var(--inline-margin2);
-    flex-direction: column;
-    height: 150vh;
-    margin-top: 0px;
+    flex-direction: column-reverse;
+
+    margin-top: 90px;
     & .hero {
-      height: 80vh;
+      /* height: 100%; */
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      margin-top: 0;
+      width: 100%;
 
       & h1 {
         font-size: 2.5rem;
@@ -579,19 +611,18 @@ footer {
       }
     }
     & .hero_img {
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       margin-inline: var(--inline-margin2);
       width: 100%;
-      
       margin-block: 0;
       padding: 0;
-      height: 50vh !important;
+
       flex: 1;
       flex-shrink: 1;
       & .img {
         width: 200px;
-        height: 50vh;
+        height: 30vh;
       }
     }
   }
@@ -607,7 +638,7 @@ footer {
         & .libraries {
           & .container {
             & img {
-              height: var(--icon-size);
+              width: var(--icon-size);
             }
           }
         }

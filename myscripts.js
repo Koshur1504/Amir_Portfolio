@@ -6,7 +6,6 @@ const hiddenElements = document.querySelectorAll(".hidden");
 const projectBtn = document.querySelector(".nav_project");
 const project = document.querySelector("#projects");
 
-
 //fix for scrolling to project section
 projectBtn.addEventListener("click", (e) => {
   e.preventDefault(e);
@@ -15,7 +14,7 @@ projectBtn.addEventListener("click", (e) => {
     top:
       project.getBoundingClientRect().top -
       document.body.getBoundingClientRect().top -
-      45,
+      90,
   });
 });
 
@@ -38,7 +37,7 @@ const animatation = () => {
 const animatation1 = () => {
   animate1.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 700;
+    let offset = sec.offsetTop - 800;
     let height = sec.offsetHeight;
 
     if (top >= offset && top - 700 < offset) {
@@ -53,7 +52,7 @@ const animatation1 = () => {
 window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 500;
+    let offset = sec.offsetTop - 600;
     let height = sec.offsetHeight;
     let id = sec.getAttribute("id");
     if (top >= offset && top < offset + height) {
