@@ -213,77 +213,78 @@ main {
       color: rgb(63, 81, 181);
     }
   }
-}
-& .hero_img {
-  flex: 1 4;
 
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 70px;
-  overflow: hidden;
-  margin-top: 7%;
+  & .hero_img {
+    flex: 1 4;
 
-  & .img {
-    padding: 0;
-    margin: 0;
-    height: 80%;
-    position: relative !important;
-    width: 13.5vw;
-    isolation: isolate;
-    border-top: 5px solid rgba(36, 102, 36, 0.158);
-    border-right: 1px dashed rgba(36, 102, 36, 0.158);
-    border-bottom: 5px solid rgba(36, 102, 36, 0.158);
-    border-left: 10px solid rgba(36, 102, 36, 0.158);
-    border-radius: 30px;
-  }
-  & .img::before {
-    content: "";
-    background-image: url("./assets//1_1-removebg-preview.png");
-    background-position: 50%;
-    border-radius: 20px;
-    background-size: 120%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: +1;
-  }
-  & .img::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(
-      45deg,
-      rgb(115, 185, 158) 0%,
-      rgba(22, 219, 160, 0.116) 35%,
-      rgba(31, 196, 105, 0.582) 100%
-    );
-    transform: skew(-30deg);
-    border: 1px dashed rgba(0, 128, 0, 0.267);
-    box-shadow: 0px 4px 8px 0px rgba(36, 102, 36, 0.158),
-      0px 6px 20px 2px rgba(0, 0, 0, 0.19);
-    transition: all cubic-bezier(0.6, -0.5, 0, 0.045) 600ms;
-  }
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 70px;
+    overflow: hidden;
+    margin-top: 7%;
 
-  &:hover {
+    & .img {
+      padding: 0;
+      margin: 0;
+      height: 80%;
+      position: relative !important;
+      width: 13.5vw;
+      isolation: isolate;
+      border-top: 5px solid rgba(36, 102, 36, 0.158);
+      border-right: 1px dashed rgba(36, 102, 36, 0.158);
+      border-bottom: 5px solid rgba(36, 102, 36, 0.158);
+      border-left: 10px solid rgba(36, 102, 36, 0.158);
+      border-radius: 30px;
+    }
+    & .img::before {
+      content: "";
+      background-image: url("./assets//1_1-removebg-preview.png");
+      background-position: 50%;
+      border-radius: 20px;
+      background-size: 120%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: +1;
+    }
     & .img::after {
-      transform: skew(-210deg);
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
       background: linear-gradient(
         45deg,
-        rgb(64, 180, 136) 0%,
-        rgba(22, 219, 160, 0.74) 35%,
-        rgba(20, 201, 101, 0.966) 100%
+        rgb(115, 185, 158) 0%,
+        rgba(22, 219, 160, 0.116) 35%,
+        rgba(31, 196, 105, 0.582) 100%
       );
+      transform: skew(-30deg);
+      border: 1px dashed rgba(0, 128, 0, 0.267);
+      box-shadow: 0px 4px 8px 0px rgba(36, 102, 36, 0.158),
+        0px 6px 20px 2px rgba(0, 0, 0, 0.19);
+      transition: all cubic-bezier(0.6, -0.5, 0, 0.045) 600ms;
+    }
 
-      border-width: 3px;
+    &:hover {
+      & .img::after {
+        transform: skew(-210deg);
+        background: linear-gradient(
+          45deg,
+          rgb(64, 180, 136) 0%,
+          rgba(22, 219, 160, 0.74) 35%,
+          rgba(20, 201, 101, 0.966) 100%
+        );
+
+        border-width: 3px;
+      }
     }
   }
 }
@@ -618,29 +619,29 @@ footer {
           }
         }
       }
-      .burgerMenu{
+      .burgerMenu {
         transition: all 500ms;
       }
-      .hidden{
+      .hidden {
         padding: 0;
         transform: translateX(50%);
-         & a{
+        & a {
           display: none;
-         }
         }
       }
-      & .burger-btn {
-        display: block;
-        background-image: url("./assets/burger-menu-svgrepo-com.svg");
-        width: 32px;
-        border: none;
-        background-size:cover;
-        background-position: center;
-        background-color: var(--header-background); 
-        margin-inline: var(--inline-margin2);
-      }
+    }
+    & .burger-btn {
+      display: block;
+      background-image: url("./assets/burger-menu-svgrepo-com.svg");
+      width: 32px;
+      border: none;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--header-background);
+      margin-inline: var(--inline-margin2);
     }
   }
+
   #overview {
     margin-inline: var(--inline-margin2);
     flex-direction: column-reverse;
@@ -713,10 +714,8 @@ footer {
       }
     }
   }
-
-
-@media only screen and (max-width: 330px) {
 }
+
 /* animation */
 
 .animate {
