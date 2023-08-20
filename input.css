@@ -5,24 +5,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 * {
-  
-&::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 0.4rem;
     height: 0.5rem;
-    
-}
+  }
 
-
-
-&::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background: rgb(136, 136, 136);
     border-radius: 1rem;
-    
-}
- 
-&::-webkit-scrollbar-track {
-  background: transparent;
-}
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -123,10 +118,18 @@ header {
     }
   }
   & .connect-btn {
-    border: 2px solid rgba(0, 128, 128, 0.452);
+    border: 0.12rem solid rgb(164, 205, 221);
     border-radius: 100px;
-    padding: 5px 14px;
+    padding: 10px 20px;
     background: transparent;
+    transition: all 100ms;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
   }
   & .burger-btn {
     display: none;
@@ -162,7 +165,7 @@ main {
       font-size: var(--h1-size);
       font-weight: var(--h1-weight);
       /* line-height: 90%; */
-      
+
       & span {
         position: relative;
         color: rgb(36, 102, 36);
@@ -198,12 +201,14 @@ main {
       background-color: black;
       color: white;
       height: 40px;
-      width: 200px;
+      width: 150px;
       border: none;
       box-shadow: 5px 5px 20px rgb(75, 75, 75, 0.5);
-      border-radius: 15px 2px;
+      border-radius: 10px;
       margin-right: 10px;
       overflow: none;
+      
+      font-size: 0.8rem;
       &:hover {
         cursor: pointer;
       }
@@ -461,6 +466,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
+ 
   & h1 {
     display: inline-block;
     padding: 10px 10px 10px 0px;
@@ -488,6 +494,15 @@ main {
     width: 17%;
     right: 0;
     bottom: 5px;
+  }
+  & li{
+    /* margin-block: 0rem; */
+    
+    list-style:disc;
+    &::marker{
+      font-size: 1.3rem;
+      
+    }
   }
   & .skill {
     width: 88%;
@@ -572,28 +587,23 @@ footer {
       margin-top: 0;
       flex: 1;
       flex-shrink: 1;
-      
-      & h1{
-        
+
+      & h1 {
       }
-      
-      
 
       & .button_tech {
         padding-right: 0;
       }
     }
     & .hero_img {
-     
-     align-items: center;
-     justify-content: center;
-     margin-top: -20px;
-     margin-left: 0;
-     margin-block: 0;
-     padding: 0;
-     flex: 1;
-     flex-shrink: 1;
-     
+      align-items: center;
+      justify-content: center;
+      margin-top: -20px;
+      margin-left: 0;
+      margin-block: 0;
+      padding: 0;
+      flex: 1;
+      flex-shrink: 1;
 
       & .img {
         width: 163px;
@@ -621,7 +631,6 @@ footer {
 }
 @media only screen and (max-width: 800px) {
   header {
-    
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.2rem 0.1rem;
 
     & .links_header {
@@ -699,7 +708,7 @@ footer {
   }
   #overview {
     flex-direction: column-reverse;
-    
+
     & .hero {
       width: 100%;
       justify-content: center;
@@ -740,7 +749,7 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
-  header{
+  header {
     padding-inline: var(--inline-margin2);
   }
   #overview {
@@ -755,12 +764,9 @@ footer {
       align-items: flex-start;
       width: 100%;
       margin-block: 30px;
-      
 
       & h1 {
-
         font-size: 2.5rem;
-        
       }
       & .bottons_icons {
         align-items: center;
@@ -892,6 +898,9 @@ footer {
 }
 .logo:nth-child(12) {
   transition-delay: 550ms;
+}
+.logo:nth-child(13) {
+  transition-delay: 600ms;
 }
 
 .show1 {

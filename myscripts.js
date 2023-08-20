@@ -49,8 +49,9 @@ resumebtn.addEventListener('click',() => {
   window.open('http://google.com', '_blank');
 })
 connectbtn.addEventListener('click',() => {
-  window.open('mailto:aamir.mir530@gmail.com', '_blank');
+  window.open('https://www.linkedin.com/in/mir-amir', '_blank');
 })
+
 
 
 // overview section animation
