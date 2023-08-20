@@ -588,8 +588,7 @@ footer {
       flex: 1;
       flex-shrink: 1;
 
-      & h1 {
-      }
+      
 
       & .button_tech {
         padding-right: 0;
