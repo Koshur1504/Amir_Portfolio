@@ -8,6 +8,7 @@ const project = document.querySelector("#projects");
 const burger = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burgerMenu");
 const resumebtn = document.querySelector("#resume-btn");
+const connectbtn = document.querySelector(".connect-btn");
 
 //burger menu functionality
 //closing burger menu
@@ -30,6 +31,7 @@ navLinks.forEach((item) => {
   item.addEventListener("click", closeBurger);
 });
 
+
 //fix for scrolling to project section
 projectBtn.addEventListener("click", (e) => {
   e.preventDefault(e);
@@ -42,9 +44,12 @@ projectBtn.addEventListener("click", (e) => {
   });
 });
 
-//resume button functionality 
+//resume and connect button functionality 
 resumebtn.addEventListener('click',() => {
   window.open('http://google.com', '_blank');
+})
+connectbtn.addEventListener('click',() => {
+  window.open('mailto:aamir.mir530@gmail.com', '_blank');
 })
 
 
@@ -52,10 +57,10 @@ resumebtn.addEventListener('click',() => {
 const animatation = () => {
   animate.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
+    let offset = sec.offsetTop-150;
     let height = sec.offsetHeight;
 
-    if (top >= offset && top < offset + height) {
+    if (top >= offset && top < offset + height+90) {
       sec.classList.add("show");
     } else {
       sec.classList.remove("show");

@@ -24,7 +24,7 @@
   --heading-color: rgb(77, 134, 110);
   --animation-delay: 100ms;
 
-  --h1-size: 3rem;
+  --h1-size: 2.5rem;
   --h1-weight: bold;
 
   --h2-size: 2rem;
@@ -140,9 +140,11 @@ main {
     }
     & h1 {
       margin-top: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-size: var(--h1-size);
       font-weight: var(--h1-weight);
+      /* line-height: 90%; */
+      
       & span {
         position: relative;
         color: rgb(36, 102, 36);
@@ -150,7 +152,7 @@ main {
       & span::before {
         content: "";
         position: absolute;
-        bottom: 0px;
+        bottom: -2px;
         left: -10px;
         height: 10px;
         width: 110%;
@@ -174,16 +176,16 @@ main {
   .bottons_icons {
     display: flex;
     align-items: center;
-    margin-top: 20px;
     & button {
       background-color: black;
       color: white;
       height: 40px;
       width: 200px;
       border: none;
-      box-shadow: 5px 5px 20px rgb(75, 75, 75, 0.9);
-      border-radius: 25px 2px;
+      box-shadow: 5px 5px 20px rgb(75, 75, 75, 0.5);
+      border-radius: 15px 2px;
       margin-right: 10px;
+      overflow: none;
       &:hover {
         cursor: pointer;
       }
@@ -207,7 +209,7 @@ main {
       font-weight: bold;
       border-radius: 50px;
       background-color: white;
-      box-shadow: 2px 0px 20px rgb(75, 75, 75, 0.5);
+      box-shadow: 2px 2px 5px rgb(75, 75, 75, 0.4);
     }
     & button:nth-of-type(3n) {
       color: rgb(162, 102, 13);
@@ -552,22 +554,28 @@ footer {
       margin-top: 0;
       flex: 1;
       flex-shrink: 1;
-      /* background-color: red; */
+      
+      & h1{
+        
+      }
+      
+      
 
       & .button_tech {
         padding-right: 0;
       }
     }
     & .hero_img {
-      /* background-color: red; */
-      align-items: center;
-      justify-content: center;
-      margin-top: -20px;
-      margin-left: 0;
-      margin-block: 0;
-      padding: 0;
-      flex: 1;
-      flex-shrink: 1;
+     
+     align-items: center;
+     justify-content: center;
+     margin-top: -20px;
+     margin-left: 0;
+     margin-block: 0;
+     padding: 0;
+     flex: 1;
+     flex-shrink: 1;
+     
 
       & .img {
         width: 163px;
@@ -595,7 +603,7 @@ footer {
 }
 @media only screen and (max-width: 800px) {
   header {
-    padding-inline: var(--inline-margin2);
+    
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.2rem 0.1rem;
 
     & .links_header {
@@ -673,13 +681,12 @@ footer {
   }
   #overview {
     flex-direction: column-reverse;
-    --inline-margin1: 1%;
+    
     & .hero {
       width: 100%;
       justify-content: center;
-      margin-inline: var(--inline-margin1);
-      margin-top: 30px;
-
+      margin-inline: var(--inline-margin2);
+      margin-block: 30px;
       & .bottons_icons {
         margin-left: auto;
         margin-right: auto;
@@ -715,23 +722,27 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
+  header{
+    padding-inline: var(--inline-margin2);
+  }
   #overview {
     margin-inline: var(--inline-margin2);
     flex-direction: column-reverse;
 
     margin-top: 90px;
     & .hero {
-      /* height: 100%; */
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-
-      margin-top: 0;
       width: 100%;
+      margin-block: 30px;
+      
 
       & h1 {
+
         font-size: 2.5rem;
+        
       }
       & .bottons_icons {
         align-items: center;
@@ -744,10 +755,10 @@ footer {
       }
       & .button_tech {
         padding-right: 0;
-       
+
         width: 100%;
         & button {
-          font-size: .7rem;
+          font-size: 0.7rem;
           width: 130px;
           height: 35px;
         }
