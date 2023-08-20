@@ -72,6 +72,7 @@ a:active {
   text-decoration: none;
 }
 header {
+  min-width: 350px !important;
   display: flex;
   justify-content: space-between;
   background-color: antiquewhite;
@@ -178,31 +179,35 @@ main {
       background-color: black;
       color: white;
       height: 40px;
-      width: 40%;
+      width: 200px;
+      border: none;
+      box-shadow: 5px 5px 20px rgb(75, 75, 75, 0.9);
+      border-radius: 25px 2px;
+      margin-right: 10px;
+      &:hover {
+        cursor: pointer;
+      }
     }
     & img {
       height: 40px;
-      margin-left: 20px;
+      margin-inline: 5px;
     }
   }
   .button_tech {
     margin-top: 30px;
-
     display: flex;
     justify-content: center;
+
     align-items: center;
     flex-wrap: wrap;
-    padding-right: 100px;
-
+    gap: 1rem;
     & button {
-      height: 35px;
-      margin: 10px 10px;
-      margin-bottom: 5px;
-      padding-left: 10%;
-      padding-right: 10%;
+      padding: 0.5rem 2rem;
       border: 1px dashed;
       font-weight: bold;
       border-radius: 50px;
+      background-color: white;
+      box-shadow: 2px 0px 20px rgb(75, 75, 75, 0.5);
     }
     & button:nth-of-type(3n) {
       color: rgb(162, 102, 13);
@@ -406,6 +411,7 @@ main {
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
+
       & .container {
         display: flex;
         flex-direction: column;
@@ -528,6 +534,9 @@ footer {
 } */
 
 @media only screen and (max-width: 1300px) {
+  * {
+    --inline-margin1: 4%;
+  }
   header {
     padding-inline: var(--inline-margin1);
   }
@@ -536,35 +545,32 @@ footer {
     margin-top: 90px;
 
     & .hero {
-      /* background-color: red; */
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
       margin-top: 0;
-      flex: 2;
+      flex: 1;
       flex-shrink: 1;
+      /* background-color: red; */
 
       & .button_tech {
         padding-right: 0;
       }
     }
     & .hero_img {
+      /* background-color: red; */
       align-items: center;
       justify-content: center;
       margin-top: -20px;
-      margin-inline: var(--inline-margin2);
-      width: 100%;
-      min-width: 230px;
+      margin-left: 0;
       margin-block: 0;
       padding: 0;
-
       flex: 1;
       flex-shrink: 1;
 
       & .img {
-        width: 250px;
+        width: 163px;
         height: 50vh;
       }
     }
@@ -587,11 +593,10 @@ footer {
     }
   }
 }
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   header {
     padding-inline: var(--inline-margin2);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0.2rem 0.1rem;
 
     & .links_header {
       flex-direction: row-reverse;
@@ -633,14 +638,13 @@ footer {
       }
       .hidden {
         padding: 0;
-        
+
         transform: scaleY(0);
         backdrop-filter: blur(3rem);
         top: 30%;
         right: 100%;
         & a {
           transform: scale(0);
-          
         }
       }
     }
@@ -667,7 +671,50 @@ footer {
       overflow: hidden;
     }
   }
+  #overview {
+    flex-direction: column-reverse;
+    --inline-margin1: 1%;
+    & .hero {
+      width: 100%;
+      justify-content: center;
+      margin-inline: var(--inline-margin1);
+      margin-top: 30px;
 
+      & .bottons_icons {
+        margin-left: auto;
+        margin-right: auto;
+        widows: 100%;
+      }
+      & .button_tech {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        & button {
+          width: 140px;
+          height: 40px;
+        }
+      }
+    }
+    & .hero_img {
+      align-items: flex-end;
+      justify-content: center;
+      margin-inline: var(--inline-margin2);
+      width: 100%;
+      margin-block: 0;
+      padding: 0;
+
+      flex: 1;
+      flex-shrink: 1;
+
+      & .img {
+        height: 30vh;
+        width: 110px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
   #overview {
     margin-inline: var(--inline-margin2);
     flex-direction: column-reverse;
@@ -686,8 +733,24 @@ footer {
       & h1 {
         font-size: 2.5rem;
       }
+      & .bottons_icons {
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+
+        & button {
+          width: 150px;
+        }
+      }
       & .button_tech {
         padding-right: 0;
+       
+        width: 100%;
+        & button {
+          font-size: .7rem;
+          width: 130px;
+          height: 35px;
+        }
       }
     }
     & .hero_img {
@@ -701,7 +764,7 @@ footer {
       flex: 1;
       flex-shrink: 1;
       & .img {
-        width: 200px;
+        width: 150px;
         height: 30vh;
       }
     }

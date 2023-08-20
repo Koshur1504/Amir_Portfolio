@@ -7,6 +7,7 @@ const projectBtn = document.querySelector(".nav_project");
 const project = document.querySelector("#projects");
 const burger = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burgerMenu");
+const resumebtn = document.querySelector("#resume-btn");
 
 //burger menu functionality
 //closing burger menu
@@ -40,6 +41,12 @@ projectBtn.addEventListener("click", (e) => {
       90,
   });
 });
+
+//resume button functionality 
+resumebtn.addEventListener('click',() => {
+  window.open('http://google.com', '_blank');
+})
+
 
 // overview section animation
 const animatation = () => {
