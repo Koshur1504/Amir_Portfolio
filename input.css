@@ -5,6 +5,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 * {
+  
+&::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.5rem;
+    
+}
+
+
+
+&::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 1rem;
+    
+}
+ 
+&::-webkit-scrollbar-track {
+  background: transparent;
+}
   margin: 0;
   padding: 0;
   box-sizing: border-box;
