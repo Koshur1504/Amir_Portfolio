@@ -46,7 +46,7 @@ projectBtn.addEventListener("click", (e) => {
 //resume and connect button functionality
 resumebtn.addEventListener("click", () => {
   window.open(
-    "https://koshur1504.github.io/Amir_Portfolio/assets/CV_amir.pdf",
+    "https://koshur1504.github.io/Amir_Portfolio/assets/CV_Amir.pdf",
     "_blank"
   );
 });
