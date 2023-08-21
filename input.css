@@ -59,6 +59,7 @@
   --inline-margin2: 2vw;
   --icon-size: 44px;
   --burger-background: rgba(240, 248, 255, 0.99);
+  
 }
 html {
   height: auto;
@@ -587,9 +588,6 @@ footer {
       margin-top: 0;
       flex: 1;
       flex-shrink: 1;
-
-      
-
       & .button_tech {
         padding-right: 0;
       }

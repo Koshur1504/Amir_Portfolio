@@ -20,7 +20,7 @@ const closeBurger = () => {
     burger.setAttribute("data-visible", true);
   } else {
     burgerMenu.setAttribute("data-visible", false);
-    burger.setAttribute("data-visible",false);
+    burger.setAttribute("data-visible", false);
   }
   burgerMenu.classList.toggle("hidden");
 };
@@ -30,7 +30,6 @@ burger.addEventListener("click", closeBurger);
 navLinks.forEach((item) => {
   item.addEventListener("click", closeBurger);
 });
-
 
 //fix for scrolling to project section
 projectBtn.addEventListener("click", (e) => {
@@ -44,24 +43,25 @@ projectBtn.addEventListener("click", (e) => {
   });
 });
 
-//resume and connect button functionality 
-resumebtn.addEventListener('click',() => {
-  window.open('http://google.com', '_blank');
-})
-connectbtn.addEventListener('click',() => {
-  window.open('https://www.linkedin.com/in/mir-amir', '_blank');
-})
-
-
+//resume and connect button functionality
+resumebtn.addEventListener("click", () => {
+  window.open(
+    "https://koshur1504.github.io/Amir_Portfolio/assets/CV_amir.pdf",
+    "_blank"
+  );
+});
+connectbtn.addEventListener("click", () => {
+  window.open("https://www.linkedin.com/in/mir-amir", "_blank");
+});
 
 // overview section animation
 const animatation = () => {
   animate.forEach((sec) => {
     let top = window.scrollY;
-    let offset = sec.offsetTop-150;
+    let offset = sec.offsetTop - 150;
     let height = sec.offsetHeight;
 
-    if (top >= offset && top < offset + height+90) {
+    if (top >= offset && top < offset + height + 90) {
       sec.classList.add("show");
     } else {
       sec.classList.remove("show");
